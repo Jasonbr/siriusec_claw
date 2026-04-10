@@ -1,0 +1,7 @@
+bin/
+.git
+.gitignore
+.DS_Store
+ui/node_modules/
+*.md
+.qoder/
