@@ -29,4 +29,4 @@ WORKDIR /home/claw
 COPY --from=backend /siriusec_claw /usr/local/bin/siriusec_claw
 EXPOSE 3578
 ENTRYPOINT ["siriusec_claw"]
-CMD ["gateway", "--port", "3578"]
+CMD ["gateway", "run", "--port", "3578"]
