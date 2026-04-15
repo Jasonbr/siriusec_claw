@@ -1,6 +1,8 @@
 package handlers
 
 import (
+	"context"
+	"encoding/base64"
 	"time"
 
 	"github.com/siriusec/siriusec_claw/pkg/config"
@@ -273,6 +275,77 @@ func MCPDeleteHandler(opts HandlerOpts) error {
 		"ok":      true,
 		"name":    name,
 		"deleted": true,
+	}, nil, nil)
+	return nil
+}
+
+// --- mcp.install ---
+
+func MCPInstallHandler(opts HandlerOpts) error {
+	source := stringParam(opts.Params, "source", "")
+	if source == "" {
+		opts.Respond(false, nil, errInvalidParams("source required (github, upload, or zip)"), nil)
+		return nil
+	}
+
+	env := envGetter()
+	var manifest *mcp.ServerManifest
+	var err error
+
+	switch source {
+	case "github":
+		url := stringParam(opts.Params, "url", "")
+		if url == "" {
+			opts.Respond(false, nil, errInvalidParams("url required for github source"), nil)
+			return nil
+		}
+		ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
+		defer cancel()
+		manifest, err = mcp.InstallFromGitHub(ctx, url, env)
+
+	case "upload":
+		contentB64 := stringParam(opts.Params, "content", "")
+		if contentB64 == "" {
+			opts.Respond(false, nil, errInvalidParams("content required for upload source (base64 encoded)"), nil)
+			return nil
+		}
+		content, decodeErr := base64.StdEncoding.DecodeString(contentB64)
+		if decodeErr != nil {
+			opts.Respond(false, nil, errInvalidParams("invalid base64 content: "+decodeErr.Error()), nil)
+			return nil
+		}
+		name := stringParam(opts.Params, "name", "")
+		manifest, err = mcp.InstallFromUpload(name, content, env)
+
+	case "zip":
+		contentB64 := stringParam(opts.Params, "content", "")
+		if contentB64 == "" {
+			opts.Respond(false, nil, errInvalidParams("content required for zip source (base64 encoded zip file)"), nil)
+			return nil
+		}
+		content, decodeErr := base64.StdEncoding.DecodeString(contentB64)
+		if decodeErr != nil {
+			opts.Respond(false, nil, errInvalidParams("invalid base64 content: "+decodeErr.Error()), nil)
+			return nil
+		}
+		name := stringParam(opts.Params, "name", "")
+		manifest, err = mcp.InstallFromZip(name, content, env)
+
+	default:
+		opts.Respond(false, nil, errInvalidParams("invalid source: "+source), nil)
+		return nil
+	}
+
+	if err != nil {
+		opts.Respond(false, nil, errInternal(err.Error()), nil)
+		return nil
+	}
+
+	opts.Respond(true, map[string]interface{}{
+		"ok":       true,
+		"name":     manifest.Name,
+		"server":   manifest.Config,
+		"manifest": manifest,
 	}, nil, nil)
 	return nil
 }

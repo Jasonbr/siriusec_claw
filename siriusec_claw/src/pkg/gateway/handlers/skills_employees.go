@@ -431,6 +431,30 @@ func EmployeesCreateHandler(opts HandlerOpts) error {
 		From:        "local",
 	}
 
+	// Parse MCP servers dependencies
+	if mcpServers, ok := opts.Params["mcpServers"].(map[string]interface{}); ok {
+		manifest.McpServers = make(map[string]config.McpServerEntry)
+		for name, cfg := range mcpServers {
+			if m, ok := cfg.(map[string]interface{}); ok {
+				entry := config.McpServerEntry{}
+				if v, ok := m["enabled"].(bool); ok {
+					entry.Enabled = &v
+				}
+				manifest.McpServers[name] = entry
+			}
+		}
+	}
+
+	// Parse environment variables
+	if envVars, ok := opts.Params["env"].(map[string]interface{}); ok {
+		manifest.Env = make(map[string]string)
+		for k, v := range envVars {
+			if s, ok := v.(string); ok {
+				manifest.Env[k] = s
+			}
+		}
+	}
+
 	env := envGetter()
 	if err := employees.SaveManifest(manifest, env); err != nil {
 		opts.Respond(false, nil, errInternal(err.Error()), nil)
@@ -514,6 +538,76 @@ func EmployeesUpdateHandler(opts HandlerOpts) error {
 	opts.Respond(true, map[string]interface{}{
 		"ok":       true,
 		"id":       id,
+		"employee": manifest,
+	}, nil, nil)
+	return nil
+}
+
+// --- employees.install ---
+
+func EmployeesInstallHandler(opts HandlerOpts) error {
+	source := stringParam(opts.Params, "source", "")
+	if source == "" {
+		opts.Respond(false, nil, errInvalidParams("source required (github, upload, or zip)"), nil)
+		return nil
+	}
+
+	env := envGetter()
+	var manifest *employees.Manifest
+	var err error
+
+	switch source {
+	case "github":
+		url := stringParam(opts.Params, "url", "")
+		if url == "" {
+			opts.Respond(false, nil, errInvalidParams("url required for github source"), nil)
+			return nil
+		}
+		ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
+		defer cancel()
+		manifest, err = employees.InstallFromGitHub(ctx, url, env)
+
+	case "upload":
+		contentB64 := stringParam(opts.Params, "content", "")
+		if contentB64 == "" {
+			opts.Respond(false, nil, errInvalidParams("content required for upload source (base64 encoded)"), nil)
+			return nil
+		}
+		content, decodeErr := base64.StdEncoding.DecodeString(contentB64)
+		if decodeErr != nil {
+			opts.Respond(false, nil, errInvalidParams("invalid base64 content: "+decodeErr.Error()), nil)
+			return nil
+		}
+		name := stringParam(opts.Params, "name", "")
+		manifest, err = employees.InstallFromUpload(name, content, env)
+
+	case "zip":
+		contentB64 := stringParam(opts.Params, "content", "")
+		if contentB64 == "" {
+			opts.Respond(false, nil, errInvalidParams("content required for zip source (base64 encoded zip file)"), nil)
+			return nil
+		}
+		content, decodeErr := base64.StdEncoding.DecodeString(contentB64)
+		if decodeErr != nil {
+			opts.Respond(false, nil, errInvalidParams("invalid base64 content: "+decodeErr.Error()), nil)
+			return nil
+		}
+		name := stringParam(opts.Params, "name", "")
+		manifest, err = employees.InstallFromZip(name, content, env)
+
+	default:
+		opts.Respond(false, nil, errInvalidParams("invalid source: "+source), nil)
+		return nil
+	}
+
+	if err != nil {
+		opts.Respond(false, nil, errInternal(err.Error()), nil)
+		return nil
+	}
+
+	opts.Respond(true, map[string]interface{}{
+		"ok":       true,
+		"id":       manifest.ID,
 		"employee": manifest,
 	}, nil, nil)
 	return nil

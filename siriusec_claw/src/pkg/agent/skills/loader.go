@@ -207,6 +207,36 @@ func LoadWorkspaceEntriesWithFS(bundledFS fs.FS, env func(string) string, worksp
 	return entries, nil
 }
 
+// LoadSpecificSkills loads only the skills with the specified IDs.
+// It searches through all skill sources (workspace, managed, bundled) for the requested skills.
+func LoadSpecificSkills(bundledFS fs.FS, env func(string) string, workspaceDir string, skillIDs []string) ([]Entry, error) {
+	if len(skillIDs) == 0 {
+		return []Entry{}, nil
+	}
+
+	// Create a set of requested skill IDs for quick lookup
+	requested := make(map[string]bool)
+	for _, id := range skillIDs {
+		requested[SanitizeName(id)] = true
+	}
+
+	// Load all available skills first
+	allSkills, err := LoadWorkspaceEntriesWithFS(bundledFS, env, workspaceDir, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	// Filter to only requested skills
+	var filtered []Entry
+	for _, skill := range allSkills {
+		if requested[skill.Name] {
+			filtered = append(filtered, skill)
+		}
+	}
+
+	return filtered, nil
+}
+
 // loadSkillsFromDir scans a directory for SKILL.md files.
 func loadSkillsFromDir(dir, source string) []Entry {
 	if dir == "" {

@@ -1,6 +1,9 @@
 package handlers
 
 import (
+	"os"
+	"time"
+
 	"github.com/siriusec/siriusec_claw/pkg/channels"
 	"github.com/siriusec/siriusec_claw/pkg/config"
 	"github.com/siriusec/siriusec_claw/pkg/memory"
@@ -11,6 +14,7 @@ var (
 	channelManager *channels.Manager
 	approvalQueue  *security.ApprovalQueue
 	memoryStore    *memory.Store
+	markdownStore  *memory.MarkdownStore
 )
 
 func init() {
@@ -151,6 +155,17 @@ func getMemoryStore() *memory.Store {
 	return memoryStore
 }
 
+func getMarkdownStore() *memory.MarkdownStore {
+	if markdownStore == nil {
+		var err error
+		markdownStore, err = memory.NewMarkdownStore(func(k string) string { return "" })
+		if err != nil {
+			return nil
+		}
+	}
+	return markdownStore
+}
+
 // --- channels.status ---
 
 func ChannelsStatusHandler(opts HandlerOpts) error {
@@ -234,6 +249,28 @@ func ApprovalsWhitelistSessionHandler(opts HandlerOpts) error {
 // --- memory.list ---
 
 func MemoryListHandler(opts HandlerOpts) error {
+	// Try Markdown store first
+	mdStore := getMarkdownStore()
+	if mdStore != nil {
+		logs, err := mdStore.ListDailyLogs()
+		if err == nil {
+			// Also check MEMORY.md
+			indexPath := mdStore.MemoryIndexPath()
+			hasIndex := false
+			if _, statErr := os.Stat(indexPath); statErr == nil {
+				hasIndex = true
+			}
+			opts.Respond(true, map[string]interface{}{
+				"dailyLogs": logs,
+				"hasIndex":  hasIndex,
+				"storeType": "markdown",
+				"count":     len(logs),
+			}, nil, nil)
+			return nil
+		}
+	}
+
+	// Fallback to legacy JSON store
 	store := getMemoryStore()
 	if store == nil {
 		opts.Respond(false, nil, errInternal("memory store not available"), nil)
@@ -251,6 +288,26 @@ func MemoryListHandler(opts HandlerOpts) error {
 // --- memory.get ---
 
 func MemoryGetHandler(opts HandlerOpts) error {
+	mdStore := getMarkdownStore()
+	if mdStore != nil {
+		filename := stringParam(opts.Params, "id", "")
+		if filename == "" {
+			opts.Respond(false, nil, errInvalidParams("id (filename) required"), nil)
+			return nil
+		}
+		content, err := mdStore.ReadMarkdownFile(filename)
+		if err != nil {
+			opts.Respond(false, nil, errInvalidParams("file not found: "+filename), nil)
+			return nil
+		}
+		opts.Respond(true, map[string]interface{}{
+			"filename":  filename,
+			"content":   content,
+			"storeType": "markdown",
+		}, nil, nil)
+		return nil
+	}
+
 	store := getMemoryStore()
 	if store == nil {
 		opts.Respond(false, nil, errInternal("memory store not available"), nil)
@@ -273,20 +330,50 @@ func MemoryGetHandler(opts HandlerOpts) error {
 // --- memory.add ---
 
 func MemoryAddHandler(opts HandlerOpts) error {
+	title := stringParam(opts.Params, "title", "")
+	content := stringParam(opts.Params, "content", "")
+	if title == "" && content == "" {
+		opts.Respond(false, nil, errInvalidParams("title or content required"), nil)
+		return nil
+	}
+
+	// Try Markdown store first
+	mdStore := getMarkdownStore()
+	if mdStore != nil {
+		var tags []string
+		if t, ok := opts.Params["tags"]; ok {
+			if tagSlice, ok := t.([]interface{}); ok {
+				for _, tg := range tagSlice {
+					if s, ok := tg.(string); ok {
+						tags = append(tags, s)
+					}
+				}
+			}
+		}
+		if err := mdStore.AppendToDailyLog(title, content, tags); err != nil {
+			opts.Respond(false, nil, errInternal("failed to add to daily log: "+err.Error()), nil)
+			return nil
+		}
+		today := time.Now().Format("2006-01-02") + ".md"
+		opts.Respond(true, map[string]interface{}{
+			"ok":        true,
+			"file":      today,
+			"storeType": "markdown",
+		}, nil, nil)
+		return nil
+	}
+
+	// Fallback to legacy JSON store
 	store := getMemoryStore()
 	if store == nil {
 		opts.Respond(false, nil, errInternal("memory store not available"), nil)
 		return nil
 	}
 	entry := &memory.Entry{
-		Title:    stringParam(opts.Params, "title", ""),
-		Content:  stringParam(opts.Params, "content", ""),
+		Title:    title,
+		Content:  content,
 		Source:   stringParam(opts.Params, "source", "user"),
 		Category: stringParam(opts.Params, "category", "note"),
-	}
-	if entry.Title == "" && entry.Content == "" {
-		opts.Respond(false, nil, errInvalidParams("title or content required"), nil)
-		return nil
 	}
 	if tags, ok := opts.Params["tags"]; ok {
 		if tagSlice, ok := tags.([]interface{}); ok {
@@ -374,14 +461,69 @@ func MemoryDeleteHandler(opts HandlerOpts) error {
 // --- memory.search ---
 
 func MemorySearchHandler(opts HandlerOpts) error {
-	store := getMemoryStore()
-	if store == nil {
-		opts.Respond(false, nil, errInternal("memory store not available"), nil)
-		return nil
-	}
 	query := stringParam(opts.Params, "query", "")
 	if query == "" {
 		opts.Respond(false, nil, errInvalidParams("query required"), nil)
+		return nil
+	}
+
+	// Try Markdown store with BM25 search + time decay + MMR reranking
+	mdStore := getMarkdownStore()
+	if mdStore != nil {
+		// Configure search
+		searchCfg := memory.DefaultHybridSearchConfig()
+		limit := intParam(opts.Params, "limit", 10)
+		searchCfg.MaxResults = limit * 3 // Get more results for MMR to select from
+		halfLifeDays, _ := opts.Params["halfLifeDays"].(float64)
+		if halfLifeDays > 0 {
+			searchCfg.HalfLifeDays = halfLifeDays
+		}
+
+		// Check if MMR is requested
+		useMMR := boolParam(opts.Params, "useMMR", false)
+		mmrLambda, _ := opts.Params["mmrLambda"].(float64)
+		if mmrLambda <= 0 || mmrLambda > 1 {
+			mmrLambda = 0.5
+		}
+
+		// Perform BM25 search
+		bm25Results := memory.SearchMarkdown(mdStore, query, searchCfg)
+
+		var finalResults interface{}
+		searchType := "bm25_with_time_decay"
+
+		// Apply MMR reranking if requested
+		if useMMR && len(bm25Results) > 0 {
+			mmrCfg := memory.MMRConfig{
+				Lambda:     mmrLambda,
+				MaxResults: limit,
+			}
+			mmrResults := memory.RerankWithMMR(bm25Results, query, mmrCfg)
+			finalResults = mmrResults
+			searchType = "bm25_with_mmr_rerank"
+		} else {
+			// Trim results to requested limit
+			if len(bm25Results) > limit {
+				bm25Results = bm25Results[:limit]
+			}
+			finalResults = bm25Results
+		}
+
+		opts.Respond(true, map[string]interface{}{
+			"results":    finalResults,
+			"count":      len(bm25Results),
+			"query":      query,
+			"storeType":  "markdown",
+			"searchType": searchType,
+			"mmrEnabled": useMMR,
+		}, nil, nil)
+		return nil
+	}
+
+	// Fallback to legacy JSON store search
+	store := getMemoryStore()
+	if store == nil {
+		opts.Respond(false, nil, errInternal("memory store not available"), nil)
 		return nil
 	}
 	limit := intParam(opts.Params, "limit", 20)

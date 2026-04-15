@@ -63,6 +63,7 @@ func NewRegistry(ctx *Context) Registry {
 	reg["employees.create"] = EmployeesCreateHandler
 	reg["employees.update"] = EmployeesUpdateHandler
 	reg["employees.upload"] = EmployeesUploadHandler
+	reg["employees.install"] = EmployeesInstallHandler
 	reg["employees.delete"] = EmployeesDeleteHandler
 
 	// --- MCP ---
@@ -71,6 +72,7 @@ func NewRegistry(ctx *Context) Registry {
 	reg["mcp.add"] = MCPAddHandler
 	reg["mcp.update"] = MCPUpdateHandler
 	reg["mcp.delete"] = MCPDeleteHandler
+	reg["mcp.install"] = MCPInstallHandler
 
 	// --- Cron ---
 	reg["cron.list"] = CronListHandler
@@ -104,6 +106,10 @@ func NewRegistry(ctx *Context) Registry {
 	reg["memory.update"] = MemoryUpdateHandler
 	reg["memory.delete"] = MemoryDeleteHandler
 	reg["memory.search"] = MemorySearchHandler
+
+	// --- Context ---
+	reg["context.list"] = ContextListHandler
+	reg["context.detail"] = ContextDetailHandler
 
 	// --- Stub handlers for unimplemented methods ---
 	stubMethods := []string{

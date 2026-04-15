@@ -113,46 +113,25 @@ func New(opts Options) (*Runtime, error) {
 	allTools = append(allTools, opts.Tools...)
 
 	// Load MCP servers if EmployeeMCPs is specified
-	var mcpManager *mcpmgr.Manager
 	if len(opts.EmployeeMCPs) > 0 {
-		mcpManager = mcpmgr.NewManager()
-		// Build a temporary config to connect MCP servers
-		mcpConfig := &config.McpConfig{
-			Servers: opts.EmployeeMCPs,
-		}
-		ctx := context.Background()
-		if err := mcpManager.ConnectAll(ctx, mcpConfig); err != nil {
-			rtLog.Warn("failed to connect MCP servers: %v", err)
-		}
-		// Convert MCP tools to agent tools
-		allToolsMap := mcpManager.ListAllTools()
-		for serverName, toolList := range allToolsMap {
-			for _, t := range toolList {
-				tool := tools.Tool{
-					Name:        serverName + "_" + t.Name,
-					Description: t.Description,
-					InputSchema: t.InputSchema,
-					Category:    "mcp",
-					Handler: func(server, toolName string) tools.ToolHandler {
-						return func(ctx context.Context, args map[string]interface{}) (*tools.ToolResult, error) {
-							result, err := mcpManager.CallTool(ctx, server, toolName, args)
-							if err != nil {
-								return &tools.ToolResult{Content: err.Error(), IsError: true}, nil
-							}
-							content := ""
-							for _, block := range result.Content {
-								if block.Type == "text" {
-									content += block.Text
-								}
-							}
-							return &tools.ToolResult{Content: content, IsError: result.IsError}, nil
-						}
-					}(serverName, t.Name),
-				}
-				allTools = append(allTools, tool)
+		mcpManager := mcpmgr.NewManager()
+		for name, entry := range opts.EmployeeMCPs {
+			enabled := true
+			if entry.Enabled != nil {
+				enabled = *entry.Enabled
+			}
+			if !enabled {
+				continue
+			}
+			if err := mcpManager.LoadServer(name, entry); err != nil {
+				rtLog.Warn("failed to load MCP server %s: %v", name, err)
+				continue
 			}
 		}
-		rtLog.Info("loaded MCP servers", "count", len(opts.EmployeeMCPs), "tools", len(allToolsMap))
+		// Add MCP tools to tool list
+		mcpTools := mcpManager.GetTools()
+		allTools = append(allTools, mcpTools...)
+		rtLog.Info("loaded MCP servers", "count", len(opts.EmployeeMCPs), "tools", len(mcpTools))
 	}
 
 	// Build handler map
