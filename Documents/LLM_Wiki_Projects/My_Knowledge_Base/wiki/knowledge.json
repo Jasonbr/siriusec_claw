@@ -1,0 +1,2470 @@
+{
+  "meta": {
+    "version": 1,
+    "created": "2026-05-18",
+    "updated": "2026-05-27"
+  },
+  "entities": {
+    "obsidian": {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "文档中提及.obsidian/目录用于存放该软件的配置文件。",
+        "生成的 Wiki 目录完全兼容该软件，可直接作为知识库打开。",
+        "作为目标知识库，通过 raw/sources/opencode-memory/ 路径接收 OpenCode 的同步文件。",
+        "作为知识库接收 OpenCode 同步的 Markdown 文件。",
+        "通过符号链接直接读取 OpenCode 的记忆文件，并作为 LLM Wiki 插件的运行环境。"
+      ],
+      "sources": [
+        "schema.md",
+        "raw/sources/sample_article.md",
+        "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md",
+        "raw/sources/opencode-memory/README.md",
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    "schemamd": {
+      "id": "schemamd",
+      "name": "schema.md",
+      "type": "article",
+      "aliases": [],
+      "facts": [
+        "本文档的文件名，用于定义知识库的结构规则。"
+      ],
+      "sources": [
+        "schema.md"
+      ]
+    },
+    "purposemd": {
+      "id": "purposemd",
+      "name": "purpose.md",
+      "type": "article",
+      "aliases": [],
+      "facts": [
+        "位于知识库根目录，用于记录目标和研究范围。",
+        "该文档定义了个人知识库的建设目的、关键问题、研究范围及演进方向。"
+      ],
+      "sources": [
+        "schema.md",
+        "purpose.md"
+      ]
+    },
+    "openai": {
+      "id": "openai",
+      "name": "OpenAI",
+      "type": "org",
+      "aliases": [],
+      "facts": [
+        "致力于创建通用人工智能（AGI）的公司之一。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md"
+      ]
+    },
+    "google-deepmind": {
+      "id": "google-deepmind",
+      "name": "Google DeepMind",
+      "type": "org",
+      "aliases": [],
+      "facts": [
+        "致力于创建通用人工智能（AGI）的公司之一。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md"
+      ]
+    },
+    "meta-platforms": {
+      "id": "meta-platforms",
+      "name": "Meta Platforms",
+      "type": "org",
+      "aliases": [
+        "Meta"
+      ],
+      "facts": [
+        "致力于创建通用人工智能（AGI）的公司之一。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md"
+      ]
+    },
+    "": {
+      "id": "",
+      "name": "达特茅斯会议",
+      "type": "event",
+      "aliases": [
+        "Dartmouth workshop",
+        "GPU",
+        "Graphics processing unit",
+        "borrow checker",
+        "example.com",
+        "Example Domain",
+        "auto-watcher",
+        "Andrej Karpathy",
+        "superpowers:writing-plans",
+        "superpowers:executing-plans",
+        "superpowers:subagent-driven-development",
+        "plan-review-gate"
+      ],
+      "facts": [
+        "人工智能于1956年在此作为一门学术学科正式确立。",
+        "自2012年起被用于加速神经网络，推动了深度学习的发展。",
+        "Rust编译器中用于追踪对象生命周期、防止内存安全错误和数据竞争的核心机制。",
+        "该域名专用于文档示例，无需获取许可。",
+        "应避免在实际操作或生产环境中使用。",
+        "该工具的功能正在本文档中进行测试。",
+        "提出了 LLM Wiki 方法论。",
+        "用于在计划生成阶段创建详细实施计划的必需子技能",
+        "用于在执行阶段跟踪并完成任务的必需子技能",
+        "用于在执行阶段替代执行计划子技能的必需子技能",
+        "用于在计划审批阶段呈现结构化计划卡片并等待用户明确批准的必需子技能"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md",
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md",
+        "raw/from_karphy/20260513-093102-example-domain.md",
+        "raw/sources/test-automation.md",
+        "raw/sources/sample_article.md",
+        "AGENTS.md"
+      ]
+    },
+    "ai": {
+      "id": "ai",
+      "name": "AI寒冬",
+      "type": "event",
+      "aliases": [
+        "AI winter",
+        "AI boom"
+      ],
+      "facts": [
+        "人工智能历史上因技术失望和资金流失而出现的低谷期。",
+        "2020年代伴随生成式AI进步而出现的资金与兴趣大幅增长期。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md"
+      ]
+    },
+    "github-copilot": {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "type": "tool",
+      "aliases": [
+        "Copilot"
+      ],
+      "facts": [
+        "被定位为适用于从编辑器到企业级工作流的AI加速器",
+        "提供代理模式以执行创建服务、搜索和运行测试等任务",
+        "提供命令行界面（CLI）版本和企业版"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    "github": {
+      "id": "github",
+      "name": "GitHub",
+      "type": "org",
+      "aliases": [],
+      "facts": [
+        "GitHub Copilot的开发与提供方",
+        "提供Agents on GitHub功能",
+        "在测试计划执行过程中被作为资源访问。",
+        "项目代码托管平台。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md",
+        "raw/from_karphy/20260513-093123-completion-test-plan.md",
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "visual-studio-code": {
+      "id": "visual-studio-code",
+      "name": "Visual Studio Code",
+      "type": "tool",
+      "aliases": [
+        "VS Code"
+      ],
+      "facts": [
+        "GitHub Copilot支持在此代码编辑器中直接运行"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    "coyote-logistics": {
+      "id": "coyote-logistics",
+      "name": "Coyote Logistics",
+      "type": "org",
+      "aliases": [],
+      "facts": [
+        "文档列出的使用GitHub Copilot的公司之一"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    "duolingo": {
+      "id": "duolingo",
+      "name": "Duolingo",
+      "type": "org",
+      "aliases": [],
+      "facts": [
+        "文档列出的使用GitHub Copilot的公司之一"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    "rust": {
+      "id": "rust",
+      "name": "Rust",
+      "type": "tool",
+      "aliases": [
+        "Rust编程语言",
+        "The Rust Team"
+      ],
+      "facts": [
+        "一种强调性能、类型安全、并发性和内存安全的通用编程语言。",
+        "首次发布于2012年1月19日，当前稳定版本为1.95。",
+        "采用MIT和Apache 2.0双重开源许可证。",
+        "Rust编程语言的官方开发者与维护团队。",
+        "作为 Tauri 的后端编程语言。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md",
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "ocaml": {
+      "id": "ocaml",
+      "name": "OCaml",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "2006年至2011年间用于实现Rust编译器的编程语言。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    "c": {
+      "id": "c",
+      "name": "C++",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "对Rust语言设计产生重要影响的编程语言之一。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    "swift": {
+      "id": "swift",
+      "name": "Swift",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "既影响了Rust的设计，又受到Rust反向影响的编程语言。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    "project-verona": {
+      "id": "project-verona",
+      "name": "Project Verona",
+      "type": "project",
+      "aliases": [],
+      "facts": [
+        "受Rust设计理念影响的编程语言研究项目。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    "zig": {
+      "id": "zig",
+      "name": "Zig",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "受Rust影响的系统级编程语言。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    "autocli": {
+      "id": "autocli",
+      "name": "autocli",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于访问 GitHub 的命令行工具或接口。",
+        "用于访问 autocli-skill 项目"
+      ],
+      "sources": [
+        "raw/from_karphy/20260513-093123-completion-test-plan.md",
+        "raw/from_karphy/20260512-165700-completion-test-integration.md"
+      ]
+    },
+    "2026-05-13-test-closuremd": {
+      "id": "2026-05-13-test-closuremd",
+      "name": "2026-05-13-test-closure.md",
+      "type": "article",
+      "aliases": [
+        "test-plan"
+      ],
+      "facts": [
+        "作为本次测试计划的计划文件。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260513-093123-completion-test-plan.md"
+      ]
+    },
+    "test-integration": {
+      "id": "test-integration",
+      "name": "test-integration",
+      "type": "project",
+      "aliases": [],
+      "facts": [
+        "该任务的完成状态为已完成，计划包含3项任务。",
+        "项目状态为已完成",
+        "完成时间为 2026-05-12T08:57:00.291234Z",
+        "共包含 3 个任务且全部完成"
+      ],
+      "sources": [
+        "raw/from_karphy/20260512-165733-completion-test-integration.md",
+        "raw/from_karphy/20260512-165700-completion-test-integration.md"
+      ]
+    },
+    "2026-05-12-test-integration-v1md": {
+      "id": "2026-05-12-test-integration-v1md",
+      "name": "2026-05-12-test-integration-v1.md",
+      "type": "article",
+      "aliases": [],
+      "facts": [
+        "作为test-integration任务的计划文件被引用。",
+        "作为 test-integration 项目的计划文件"
+      ],
+      "sources": [
+        "raw/from_karphy/20260512-165733-completion-test-integration.md",
+        "raw/from_karphy/20260512-165700-completion-test-integration.md"
+      ]
+    },
+    "the-rust-programming-language": {
+      "id": "the-rust-programming-language",
+      "name": "The Rust Programming Language",
+      "type": "book",
+      "aliases": [],
+      "facts": [
+        "在资源访问部分列出，可通过网页访问。",
+        "在项目实施过程中通过 web-access 被访问作为资源",
+        "本文档的来源链接指向该书籍的官方网页。"
+      ],
+      "sources": [
+        "raw/from_karphy/20260512-165733-completion-test-integration.md",
+        "raw/from_karphy/20260512-165700-completion-test-integration.md",
+        "raw/from_karphy/20260512-165216-untitled.md"
+      ]
+    },
+    "autocli-skill": {
+      "id": "autocli-skill",
+      "name": "autocli-skill",
+      "type": "project",
+      "aliases": [],
+      "facts": [
+        "在资源访问部分列出，可通过autocli工具访问。",
+        "在项目实施过程中通过 autocli 被访问作为资源"
+      ],
+      "sources": [
+        "raw/from_karphy/20260512-165733-completion-test-integration.md",
+        "raw/from_karphy/20260512-165700-completion-test-integration.md"
+      ]
+    },
+    "llm-wiki": {
+      "id": "llm-wiki",
+      "name": "LLM Wiki",
+      "type": "project",
+      "aliases": [
+        "llm_wiki"
+      ],
+      "facts": [
+        "基于卡帕西理念的开源项目，将文档自动转化为结构化、相互关联的个人知识库。",
+        "一个跨平台桌面应用程序，可将文档自动转化为结构化、相互链接的个人知识库。",
+        "采用三层架构：原始源文件、大语言模型生成的维基、模式与配置。",
+        "生成的维基目录完全兼容 Obsidian，可直接作为 Obsidian 库使用。",
+        "作为知识图谱可视化的目标数据源，其内链关系被提取用于构建图数据。",
+        "维护一个持久的 Markdown 维基以跨来源积累理解",
+        "包含 raw/（只读源材料）和 wiki/（维护的知识层）目录结构",
+        "提供 OnSaveWatcher 监控机制，负责检测新文件并自动提取概念、实体与关系。",
+        "自动提取同步到 Obsidian 的 Markdown 文件并生成知识图谱。",
+        "提供 OnSaveWatcher 与夜间调度器，负责从同步的 Markdown 文件中自动提取知识。",
+        "其配置文件 data.json 中启用了夜间提取并设定执行时间为每日 17:00。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md",
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md",
+        "docs/plans/2026-05-11-knowledge-graph-viz.md",
+        "AGENTS.md",
+        "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md",
+        "raw/sources/opencode-memory/README.md",
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    "sigmajs": {
+      "id": "sigmajs",
+      "name": "sigma.js",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于知识图谱可视化的前端图形库。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "forceatlas2": {
+      "id": "forceatlas2",
+      "name": "ForceAtlas2",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于知识图谱布局的算法。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "tavily-api": {
+      "id": "tavily-api",
+      "name": "Tavily API",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于一键触发网络搜索的 API 服务。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "mozilla-readabilityjs": {
+      "id": "mozilla-readabilityjs",
+      "name": "Mozilla Readability.js",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于从网页提取正文的 JavaScript 库。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "turndownjs": {
+      "id": "turndownjs",
+      "name": "Turndown.js",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于将 HTML 转换为 Markdown 的 JavaScript 库。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "tauri": {
+      "id": "tauri",
+      "name": "Tauri",
+      "type": "tool",
+      "aliases": [
+        "Tauri v2"
+      ],
+      "facts": [
+        "用于构建桌面应用的框架，其后端使用 Rust。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "react": {
+      "id": "react",
+      "name": "React",
+      "type": "tool",
+      "aliases": [
+        "React 19"
+      ],
+      "facts": [
+        "用于构建前端界面的 JavaScript 库。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "typescript": {
+      "id": "typescript",
+      "name": "TypeScript",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于前端开发的编程语言。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "vite": {
+      "id": "vite",
+      "name": "Vite",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "前端构建工具。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "shadcnui": {
+      "id": "shadcnui",
+      "name": "shadcn/ui",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "UI 组件库。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "tailwind-css": {
+      "id": "tailwind-css",
+      "name": "Tailwind CSS",
+      "type": "tool",
+      "aliases": [
+        "Tailwind CSS v4"
+      ],
+      "facts": [
+        "CSS 框架。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "graphology": {
+      "id": "graphology",
+      "name": "graphology",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "图论算法库。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "lancedb": {
+      "id": "lancedb",
+      "name": "LanceDB",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于向量搜索的数据库。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "chrome": {
+      "id": "chrome",
+      "name": "Chrome",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于网页剪藏功能的浏览器。"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "obsidian-web-clipper": {
+      "id": "obsidian-web-clipper",
+      "name": "Obsidian Web Clipper",
+      "type": "tool",
+      "aliases": [
+        "Obsidian 网页剪藏插件"
+      ],
+      "facts": [
+        "一款免费的浏览器扩展，允许用户高亮网页并将内容保存到本地知识库。",
+        "代码开源且可审计，不收集用户数据或使用指标。"
+      ],
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    "firefox": {
+      "id": "firefox",
+      "name": "Firefox",
+      "type": "tool",
+      "aliases": [
+        "火狐浏览器"
+      ],
+      "facts": [
+        "支持安装 Obsidian Web Clipper 扩展的浏览器之一。"
+      ],
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    "safari": {
+      "id": "safari",
+      "name": "Safari",
+      "type": "tool",
+      "aliases": [
+        "苹果浏览器"
+      ],
+      "facts": [
+        "支持在 macOS、iOS 和 iPadOS 上安装 Obsidian Web Clipper 扩展。"
+      ],
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    "microsoft-edge": {
+      "id": "microsoft-edge",
+      "name": "Microsoft Edge",
+      "type": "tool",
+      "aliases": [
+        "Edge 浏览器"
+      ],
+      "facts": [
+        "支持安装 Obsidian Web Clipper 扩展的浏览器之一。"
+      ],
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    "andrej-karpathy": {
+      "id": "andrej-karpathy",
+      "name": "Andrej Karpathy",
+      "type": "person",
+      "aliases": [],
+      "facts": [
+        "提出了使用大语言模型增量构建和维护个人维基的原始设计模式。",
+        "其原始文档 llm-wiki.md 是该项目的核心方法论基础。"
+      ],
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    "nashsu": {
+      "id": "nashsu",
+      "name": "nashsu",
+      "type": "person",
+      "aliases": [],
+      "facts": [
+        "该项目的 GitHub 仓库创建者与维护者。"
+      ],
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    "serpapi": {
+      "id": "serpapi",
+      "name": "SerpApi",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于深度研究功能的多查询网络搜索 API 之一。"
+      ],
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    "searxng": {
+      "id": "searxng",
+      "name": "SearXNG",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于深度研究功能的多查询网络搜索 API 之一。"
+      ],
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    "chrome-web-clipper": {
+      "id": "chrome-web-clipper",
+      "name": "Chrome Web Clipper",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "支持一键捕获网页并自动录入知识库的浏览器扩展。"
+      ],
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    "rag": {
+      "id": "rag",
+      "name": "RAG",
+      "type": "other",
+      "aliases": [
+        "检索增强生成"
+      ],
+      "facts": [
+        "传统的检索增强生成架构，每次查询都从头检索和回答。",
+        "LLM Wiki 采用增量维护持久化维基的方式与之形成对比。"
+      ],
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    "python": {
+      "id": "python",
+      "name": "Python",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于编写图数据提取脚本，解析 wiki 内链关系并生成 JSON 格式的图数据。"
+      ],
+      "sources": [
+        "docs/plans/2026-05-11-knowledge-graph-viz.md"
+      ]
+    },
+    "d3js": {
+      "id": "d3js",
+      "name": "D3.js",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于前端渲染力导向图，支持节点拖拽、缩放和点击跳转功能。"
+      ],
+      "sources": [
+        "docs/plans/2026-05-11-knowledge-graph-viz.md"
+      ]
+    },
+    "htmlcss": {
+      "id": "htmlcss",
+      "name": "HTML/CSS",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于构建单页面静态可视化界面及样式。"
+      ],
+      "sources": [
+        "docs/plans/2026-05-11-knowledge-graph-viz.md"
+      ]
+    },
+    "llm": {
+      "id": "llm",
+      "name": "LLM 智能体",
+      "type": "other",
+      "aliases": [],
+      "facts": [
+        "在此仓库上执行操作，负责知识摄入、查询和清理任务",
+        "需遵循严格的五阶段执行纪律，禁止跳过任何阶段或接受模糊回复"
+      ],
+      "sources": [
+        "AGENTS.md"
+      ]
+    },
+    "opencode": {
+      "id": "opencode",
+      "name": "OpenCode",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "拥有记忆系统，其记忆文件默认保存于 ~/.config/opencode/memory/ 目录。",
+        "是 Oh My OpenCode 的免费本地记忆系统，与 Obsidian 和 LLM Wiki 知识库整合。",
+        "支持会话记忆、项目记忆和自动同步到 Obsidian 知识库。",
+        "所有数据存储在本地，不发送到云服务，完全免费。",
+        "提供本地记忆功能，可检测重要信息并触发自动同步流程。",
+        "会话结束后自动将记忆文件保存至本地 ~/.config/opencode/memory/ 目录。",
+        "本文档涉及的分支命名空间（如 opencode/feature-name）与工作流集成相关。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md",
+        "raw/sources/opencode-memory/README.md",
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md",
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    },
+    "siriusec-mcp": {
+      "id": "siriusec-mcp",
+      "name": "Siriusec MCP",
+      "type": "project",
+      "aliases": [],
+      "facts": [
+        "基于 Go、Gin 与 MCP 协议构建的智能运维诊断平台。",
+        "提供 SSH 远程诊断与系统安全扫描（含 Rootkit 与挖矿检测）功能。",
+        "MCP 服务默认端口为 7140，Web UI 端口为 8080。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "go": {
+      "id": "go",
+      "name": "Go",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "Siriusec MCP 项目的主要开发语言。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "gin": {
+      "id": "gin",
+      "name": "Gin",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "Siriusec MCP 项目使用的 Web 框架。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "mcp": {
+      "id": "mcp",
+      "name": "MCP 协议",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "Siriusec MCP 项目遵循的通信协议。",
+        "工具注册需显式导入 mcpp 库，且处理函数必须同步实现。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "ssh": {
+      "id": "ssh",
+      "name": "SSH",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于 Siriusec MCP 项目的远程诊断协议。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "systemd": {
+      "id": "systemd",
+      "name": "systemd",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "Linux 系统初始化与服务管理器，用于安全清理流程中的服务启停与配置重载。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "hostguard-ebpf": {
+      "id": "hostguard-ebpf",
+      "name": "hostguard eBPF",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "产生 signal 137 信号的 eBPF 安全监控组件。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "rootkit": {
+      "id": "rootkit",
+      "name": "Rootkit",
+      "type": "other",
+      "aliases": [],
+      "facts": [
+        "系统安全扫描的核心检测目标之一。",
+        "可通过 ps 命令异常、进程自动重启等特征进行识别。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "ldpreload": {
+      "id": "ldpreload",
+      "name": "LD_PRELOAD 劫持",
+      "type": "other",
+      "aliases": [],
+      "facts": [
+        "一种 Rootkit 技术手段，表现为 ps 命令仅显示内核进程。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "myknowledgebase": {
+      "id": "myknowledgebase",
+      "name": "My_Knowledge_Base",
+      "type": "project",
+      "aliases": [],
+      "facts": [
+        "用于整合 OpenCode 本地记忆与 Obsidian 的知识库项目。",
+        "在配置中被指定为 OpenCode 记忆同步的目标 Obsidian vault 路径。",
+        "目标知识库项目，其 raw/sources/ 目录下创建了指向 OpenCode 记忆目录的符号链接。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md",
+        "raw/sources/opencode-memory/README.md",
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    "supermemory": {
+      "id": "supermemory",
+      "name": "Supermemory",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "需要 API Key 和付费计划的记忆系统，因成本原因被放弃。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    "oh-my-opencode": {
+      "id": "oh-my-opencode",
+      "name": "Oh My OpenCode",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "免费的本地记忆系统，作为 Supermemory 的替代方案。",
+        "包含 OpenCode 本地记忆系统。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md",
+        "raw/sources/opencode-memory/README.md"
+      ]
+    },
+    "compaction-context-injector": {
+      "id": "compaction-context-injector",
+      "name": "compaction-context-injector",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于保存上下文的钩子组件。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    "dcpforcompaction": {
+      "id": "dcpforcompaction",
+      "name": "dcp_for_compaction",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "动态上下文剪枝功能，在 token 限制时智能压缩上下文。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    "sync-memory-to-obsidiansh": {
+      "id": "sync-memory-to-obsidiansh",
+      "name": "sync-memory-to-obsidian.sh",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "将 OpenCode 记忆导出为 Markdown 并同步至 Obsidian raw/sources/ 目录的脚本。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    "ask-knowledge-base": {
+      "id": "ask-knowledge-base",
+      "name": "Ask knowledge base",
+      "type": "other",
+      "aliases": [],
+      "facts": [
+        "用于查询由 LLM Wiki 生成的知识图谱的功能。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    "opencode-sync-memory": {
+      "id": "opencode-sync-memory",
+      "name": "opencode-sync-memory",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "用于手动将 OpenCode 记忆同步到 Obsidian 的命令行命令。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/README.md"
+      ]
+    },
+    "qwen36-plus": {
+      "id": "qwen36-plus",
+      "name": "qwen3.6-plus",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "被配置为 LLM Wiki 的自定义 OpenAI 兼容大语言模型。"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    "git": {
+      "id": "git",
+      "name": "Git",
+      "type": "tool",
+      "aliases": [],
+      "facts": [
+        "提供 worktree 功能，该功能依赖有效的 HEAD 指针，空仓库需先创建初始 commit 才能使用。"
+      ],
+      "sources": [
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    },
+    "git-worktree-best-practices": {
+      "id": "git-worktree-best-practices",
+      "name": "Git Worktree Best Practices",
+      "type": "article",
+      "aliases": [],
+      "facts": [
+        "本文档引用的相关参考文档。"
+      ],
+      "sources": [
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    },
+    "opencode-workflow-integration": {
+      "id": "opencode-workflow-integration",
+      "name": "Opencode Workflow Integration",
+      "type": "article",
+      "aliases": [],
+      "facts": [
+        "本文档引用的相关参考文档。"
+      ],
+      "sources": [
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    }
+  },
+  "concepts": {
+    "": {
+      "id": "",
+      "name": "知识库模式",
+      "definition": "连接 raw/sources/opencode-memory/ 与 ~/.config/opencode/memory/ 的文件系统映射机制。",
+      "related": [
+        "页面类型",
+        "前置元数据格式",
+        "维基链接格式",
+        "实体",
+        "概念",
+        "来源",
+        "查询",
+        "知识库模式",
+        "机器学习",
+        "深度学习",
+        "生成式人工智能",
+        "人工智能",
+        "AI繁荣",
+        "OpenAI",
+        "Google DeepMind",
+        "Meta Platforms",
+        "图形处理器",
+        "人工智能安全",
+        "人工智能监管",
+        "人工智能伦理",
+        "GitHub Copilot",
+        "借用检查器",
+        "Rust",
+        "自动监视器",
+        "LLM Wiki",
+        "sigma.js",
+        "ForceAtlas2",
+        "Louvain 社区检测",
+        "Tavily API",
+        "知识图谱可视化",
+        "Obsidian Web Clipper",
+        "SerpApi",
+        "SearXNG",
+        "LanceDB",
+        "purpose.md",
+        "技术与编程",
+        "个人发展",
+        "项目文档",
+        "个人知识管理系统",
+        "Python",
+        "D3.js",
+        "LLM 智能体操作规范",
+        "修订工件",
+        "知识摄入流程",
+        "OpenCode",
+        "Obsidian",
+        "符号链接",
+        "自动同步",
+        "systemd",
+        "Oh My OpenCode",
+        "compaction-context-injector",
+        "dcp_for_compaction",
+        "sync-memory-to-obsidian.sh",
+        "My_Knowledge_Base",
+        "qwen3.6-plus",
+        "夜间自动提取任务"
+      ],
+      "sources": [
+        "schema.md",
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md",
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md",
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md",
+        "raw/sources/test-automation.md",
+        "raw/sources/sample_article.md",
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md",
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md",
+        "purpose.md",
+        "docs/plans/2026-05-11-knowledge-graph-viz.md",
+        "AGENTS.md",
+        "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md",
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md",
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md",
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    "transformer": {
+      "id": "transformer",
+      "name": "Transformer架构",
+      "definition": "2017年后进一步加速人工智能发展的模型架构。",
+      "related": [
+        "人工智能",
+        "深度学习"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md"
+      ]
+    },
+    "ai": {
+      "id": "ai",
+      "name": "AI结对编程",
+      "definition": "一种由人工智能作为编程伙伴，辅助开发者完成代码编写、调试和测试的工作模式。",
+      "related": [
+        "GitHub Copilot"
+      ],
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    "chrome": {
+      "id": "chrome",
+      "name": "Chrome 网页剪藏",
+      "definition": "通过浏览器提取网页正文并转换为 Markdown 以触发录入流程的功能。",
+      "related": [
+        "Mozilla Readability.js",
+        "Turndown.js",
+        "Chrome"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    "louvain": {
+      "id": "louvain",
+      "name": "Louvain 社区检测",
+      "definition": "基于链接拓扑自动发现知识聚类，并计算内聚度评分的图算法。",
+      "related": [
+        "知识图谱可视化",
+        "LLM Wiki",
+        "graphology"
+      ],
+      "sources": [
+        "raw/sources/sample_article.md",
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    "llm": {
+      "id": "llm",
+      "name": "LLM 智能体操作规范",
+      "definition": "定义 LLM 智能体如何在仓库中操作以维护持久化 Markdown 维基的规则、目录结构与写作标准。",
+      "related": [
+        "LLM Wiki",
+        "LLM 智能体"
+      ],
+      "sources": [
+        "AGENTS.md"
+      ]
+    },
+    "onsavewatcher": {
+      "id": "onsavewatcher",
+      "name": "OnSaveWatcher",
+      "definition": "LLM Wiki 的文件变更监控组件，具备 5 秒防抖（debounce）机制以触发知识提取。",
+      "related": [
+        "LLM Wiki"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md"
+      ]
+    },
+    "mcp": {
+      "id": "mcp",
+      "name": "MCP 工具注册规范",
+      "definition": "定义在 Go 中注册 MCP 工具的标准代码结构，要求显式导入 mcpp 库且处理函数必须同步实现。",
+      "related": [
+        "MCP 协议",
+        "Go"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "mcp-api": {
+      "id": "mcp-api",
+      "name": "MCP API 调用流程",
+      "definition": "调用 MCP 工具的标准步骤：先 initialize 获取 Session ID，后续请求必须携带 Mcp-Session-Id 请求头。",
+      "related": [
+        "MCP 协议"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "rootkit": {
+      "id": "rootkit",
+      "name": "Rootkit 信号特征",
+      "definition": "用于识别 Rootkit 的系统指标集合，包括 signal 137、ps 命令异常及进程自动重启现象。",
+      "related": [
+        "Rootkit",
+        "hostguard eBPF",
+        "LD_PRELOAD 劫持",
+        "systemd"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    "opencode": {
+      "id": "opencode",
+      "name": "OpenCode 记忆分类体系",
+      "definition": "定义 OpenCode 本地记忆系统中存储信息的六种类型：decision（架构或设计决策）、learning（开发中学到的知识）、preference（用户或项目偏好）、blocker（当前障碍或问题）、context（一般上下文信息）和 pattern（重复模式或约定）。",
+      "related": [
+        "OpenCode 本地记忆系统",
+        "Obsidian",
+        "LLM Wiki"
+      ],
+      "sources": [
+        "raw/sources/opencode-memory/README.md"
+      ]
+    },
+    "git-worktree": {
+      "id": "git-worktree",
+      "name": "Git Worktree 初始化",
+      "definition": "解决空仓库使用 git worktree 时报错 'not a valid object name: HEAD' 的技术方案，核心步骤是先创建初始 commit。",
+      "related": [
+        "Git",
+        "OpenCode"
+      ],
+      "sources": [
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    },
+    "worktree": {
+      "id": "worktree",
+      "name": "Worktree 目录结构规范",
+      "definition": "统一使用 ./worktrees/<branch-name> 路径存放所有工作区的目录约定。",
+      "related": [
+        "Git Worktree 初始化"
+      ],
+      "sources": [
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    }
+  },
+  "connections": [
+    {
+      "from": "",
+      "to": "",
+      "type": "uses",
+      "description": "知识库模式规定使用YAML前置元数据格式来管理页面属性。",
+      "sources": [
+        "schema.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "",
+      "type": "part-of",
+      "description": "实体是页面类型分类体系中的一个子类。",
+      "sources": [
+        "schema.md",
+        "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md"
+      ]
+    },
+    {
+      "from": "schemamd",
+      "to": "",
+      "type": "related-to",
+      "description": "该文件详细描述了知识库模式的结构与规则。",
+      "sources": [
+        "schema.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "",
+      "type": "influences",
+      "description": "图形处理器的使用加速了神经网络，直接推动了深度学习技术的突破。",
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md",
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "",
+      "type": "applies-to",
+      "description": "深度学习是实现人工智能目标的核心技术方法之一。",
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md",
+        "raw/sources/test-automation.md",
+        "purpose.md"
+      ]
+    },
+    {
+      "from": "transformer",
+      "to": "",
+      "type": "extends",
+      "description": "该架构在2017年后进一步扩展和加速了人工智能的发展。",
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md"
+      ]
+    },
+    {
+      "from": "openai",
+      "to": "",
+      "type": "related-to",
+      "description": "OpenAI等公司的核心目标是研发通用人工智能。",
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "",
+      "type": "created-by",
+      "description": "人工智能作为一门学术学科于1956年在此会议中正式创立。",
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "ai",
+      "type": "influences",
+      "description": "生成式AI的进步与广泛应用促成了2020年代的AI繁荣。",
+      "sources": [
+        "raw/from_karphy/20260514-092910-artificial-intelligence.md"
+      ]
+    },
+    {
+      "from": "github-copilot",
+      "to": "github",
+      "type": "created-by",
+      "description": "GitHub开发并提供了GitHub Copilot工具。",
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    {
+      "from": "github-copilot",
+      "to": "visual-studio-code",
+      "type": "applies-to",
+      "description": "GitHub Copilot可作为插件或内置功能应用于Visual Studio Code编辑器。",
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    {
+      "from": "github-copilot",
+      "to": "ai",
+      "type": "related-to",
+      "description": "GitHub Copilot是实现AI结对编程理念的具体工具。",
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    {
+      "from": "coyote-logistics",
+      "to": "github-copilot",
+      "type": "uses",
+      "description": "Coyote Logistics在实际业务中采用GitHub Copilot。",
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    {
+      "from": "duolingo",
+      "to": "github-copilot",
+      "type": "uses",
+      "description": "Duolingo在实际业务中采用GitHub Copilot。",
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    {
+      "from": "github-copilot",
+      "to": "",
+      "type": "uses",
+      "description": "GitHub Copilot内置代理模式以执行复杂开发工作流。",
+      "sources": [
+        "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md"
+      ]
+    },
+    {
+      "from": "rust",
+      "to": "rust",
+      "type": "created-by",
+      "description": "Rust编程语言由Rust团队开发和维护。",
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    {
+      "from": "rust",
+      "to": "ocaml",
+      "type": "uses",
+      "description": "Rust编译器在2006至2011年间使用OCaml语言实现。",
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    {
+      "from": "c",
+      "to": "rust",
+      "type": "influences",
+      "description": "C++的设计理念对Rust产生了影响。",
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    {
+      "from": "swift",
+      "to": "rust",
+      "type": "influences",
+      "description": "Swift对Rust的设计产生了影响。",
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    {
+      "from": "rust",
+      "to": "swift",
+      "type": "influences",
+      "description": "Rust也对Swift的后续发展产生了影响。",
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    {
+      "from": "rust",
+      "to": "",
+      "type": "uses",
+      "description": "Rust使用借用检查器来强制执行内存安全并防止数据竞争。",
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    {
+      "from": "rust",
+      "to": "project-verona",
+      "type": "influences",
+      "description": "Rust的设计理念影响了Project Verona项目。",
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    {
+      "from": "rust",
+      "to": "zig",
+      "type": "influences",
+      "description": "Rust对Zig编程语言的设计产生了影响。",
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "rust",
+      "type": "influences",
+      "description": "函数式编程的理念（如不可变性、模式匹配等）影响了Rust的设计。",
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "rust",
+      "type": "applies-to",
+      "description": "Rust通过结构体、枚举和特征等机制支持面向对象编程范式。",
+      "sources": [
+        "raw/from_karphy/20260514-092056-rust--programming-language-.md"
+      ]
+    },
+    {
+      "from": "autocli",
+      "to": "github",
+      "type": "uses",
+      "description": "autocli 被用于访问 GitHub 平台资源。",
+      "sources": [
+        "raw/from_karphy/20260513-093123-completion-test-plan.md"
+      ]
+    },
+    {
+      "from": "test-integration",
+      "to": "2026-05-12-test-integration-v1md",
+      "type": "uses",
+      "description": "该任务使用此文件作为执行计划。",
+      "sources": [
+        "raw/from_karphy/20260512-165733-completion-test-integration.md",
+        "raw/from_karphy/20260512-165700-completion-test-integration.md"
+      ]
+    },
+    {
+      "from": "test-integration",
+      "to": "the-rust-programming-language",
+      "type": "uses",
+      "description": "任务执行期间访问了该书籍作为参考资料。",
+      "sources": [
+        "raw/from_karphy/20260512-165733-completion-test-integration.md",
+        "raw/from_karphy/20260512-165700-completion-test-integration.md"
+      ]
+    },
+    {
+      "from": "test-integration",
+      "to": "autocli-skill",
+      "type": "uses",
+      "description": "任务执行期间访问了该项目作为参考资料。",
+      "sources": [
+        "raw/from_karphy/20260512-165733-completion-test-integration.md",
+        "raw/from_karphy/20260512-165700-completion-test-integration.md"
+      ]
+    },
+    {
+      "from": "autocli-skill",
+      "to": "autocli",
+      "type": "uses",
+      "description": "该项目通过autocli工具进行访问。",
+      "sources": [
+        "raw/from_karphy/20260512-165733-completion-test-integration.md"
+      ]
+    },
+    {
+      "from": "the-rust-programming-language",
+      "to": "rust",
+      "type": "related-to",
+      "description": "该书籍主要介绍Rust编程语言。",
+      "sources": [
+        "raw/from_karphy/20260512-165733-completion-test-integration.md"
+      ]
+    },
+    {
+      "from": "autocli",
+      "to": "autocli-skill",
+      "type": "uses",
+      "description": "通过该工具访问 autocli-skill 项目",
+      "sources": [
+        "raw/from_karphy/20260512-165700-completion-test-integration.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "",
+      "type": "influences",
+      "description": "基于其提出的 LLM Wiki 方法论开发。",
+      "sources": [
+        "raw/sources/sample_article.md",
+        "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "obsidian",
+      "type": "related-to",
+      "description": "生成的目录完全兼容 Obsidian。",
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "github",
+      "type": "related-to",
+      "description": "项目代码托管于 GitHub。",
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "tauri",
+      "type": "uses",
+      "description": "使用 Tauri 构建桌面端应用。",
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    {
+      "from": "tauri",
+      "to": "rust",
+      "type": "uses",
+      "description": "Tauri 使用 Rust 作为后端语言。",
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "react",
+      "type": "uses",
+      "description": "使用 React 构建前端界面。",
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "sigmajs",
+      "type": "uses",
+      "description": "使用 sigma.js 进行知识图谱可视化。",
+      "sources": [
+        "raw/sources/sample_article.md",
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "forceatlas2",
+      "type": "uses",
+      "description": "使用 ForceAtlas2 进行图谱布局。",
+      "sources": [
+        "raw/sources/sample_article.md",
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "tavily-api",
+      "type": "uses",
+      "description": "使用 Tavily API 进行网络搜索。",
+      "sources": [
+        "raw/sources/sample_article.md",
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "mozilla-readabilityjs",
+      "type": "uses",
+      "description": "使用其提取网页正文。",
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "turndownjs",
+      "type": "uses",
+      "description": "使用其将 HTML 转换为 Markdown。",
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "lancedb",
+      "type": "uses",
+      "description": "使用其进行向量搜索。",
+      "sources": [
+        "raw/sources/sample_article.md",
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "llm-wiki",
+      "type": "part-of",
+      "description": "是 LLM Wiki 的核心特性之一。",
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    {
+      "from": "chrome",
+      "to": "llm-wiki",
+      "type": "part-of",
+      "description": "是 LLM Wiki 的核心特性之一。",
+      "sources": [
+        "raw/sources/sample_article.md"
+      ]
+    },
+    {
+      "from": "obsidian-web-clipper",
+      "to": "obsidian",
+      "type": "uses",
+      "description": "将剪藏的网页内容保存至 Obsidian 本地知识库中。",
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    {
+      "from": "obsidian-web-clipper",
+      "to": "chrome",
+      "type": "applies-to",
+      "description": "支持在 Chrome 及其他基于 Chromium 的浏览器上安装使用。",
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    {
+      "from": "obsidian-web-clipper",
+      "to": "firefox",
+      "type": "applies-to",
+      "description": "支持在 Firefox 及 Firefox Mobile 上安装使用。",
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    {
+      "from": "obsidian-web-clipper",
+      "to": "safari",
+      "type": "applies-to",
+      "description": "支持在 macOS、iOS 和 iPadOS 的 Safari 上安装使用。",
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    {
+      "from": "obsidian-web-clipper",
+      "to": "microsoft-edge",
+      "type": "applies-to",
+      "description": "支持在 Microsoft Edge 浏览器上安装使用。",
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "obsidian-web-clipper",
+      "type": "part-of",
+      "description": "是 Obsidian Web Clipper 提供的核心功能之一。",
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "obsidian-web-clipper",
+      "type": "applies-to",
+      "description": "规定了该插件的数据处理与隐私保护原则。",
+      "sources": [
+        "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "andrej-karpathy",
+      "type": "extends",
+      "description": "在 Andrej Karpathy 的原始设计模式基础上进行了大量功能扩展与桌面化实现。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "nashsu",
+      "type": "created-by",
+      "description": "由 nashsu 在 GitHub 上创建并维护。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "rag",
+      "type": "contrasts-with",
+      "description": "采用增量构建和持久化维护知识库的方式，区别于每次查询都从头检索的传统 RAG 架构。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "obsidian",
+      "type": "uses",
+      "description": "生成的维基目录完全兼容 Obsidian，可直接作为 Obsidian 库使用。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "serpapi",
+      "type": "uses",
+      "description": "在深度研究功能中支持调用 SerpApi 进行网络搜索。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "searxng",
+      "type": "uses",
+      "description": "在深度研究功能中支持调用 SearXNG 进行网络搜索。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "graphology",
+      "type": "uses",
+      "description": "使用 graphology 处理知识图谱数据结构及社区检测。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "rust",
+      "type": "uses",
+      "description": "LanceDB 的底层后端使用 Rust 编写，LLM Wiki 间接依赖其高性能特性。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "chrome-web-clipper",
+      "type": "uses",
+      "description": "集成 Chrome Web Clipper 实现一键网页捕获与自动录入。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "schemamd",
+      "type": "uses",
+      "description": "将 schema.md 作为维基的结构规则与配置核心。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "purposemd",
+      "type": "uses",
+      "description": "将 purpose.md 作为定义维基目标、研究范围和方向意图的核心文件。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "louvain",
+      "type": "uses",
+      "description": "应用 Louvain 社区检测算法自动发现知识聚类并计算内聚度。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "",
+      "type": "uses",
+      "description": "采用两步思维链录入流程，先分析后生成以提升内容质量。",
+      "sources": [
+        "raw/sources/20250511-011617-github-nashsu-llm-wiki.md",
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    {
+      "from": "purposemd",
+      "to": "",
+      "type": "related-to",
+      "description": "该文档详细说明了构建此系统的目标、关键问题与研究范围。",
+      "sources": [
+        "purpose.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "python",
+      "type": "uses",
+      "description": "使用 Python 脚本提取 wiki 内链关系以构建图数据。",
+      "sources": [
+        "docs/plans/2026-05-11-knowledge-graph-viz.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "d3js",
+      "type": "uses",
+      "description": "使用 D3.js 在前端渲染交互式力导向图。",
+      "sources": [
+        "docs/plans/2026-05-11-knowledge-graph-viz.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "htmlcss",
+      "type": "uses",
+      "description": "使用 HTML/CSS 构建单页面静态可视化界面。",
+      "sources": [
+        "docs/plans/2026-05-11-knowledge-graph-viz.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "llm-wiki",
+      "type": "applies-to",
+      "description": "为 LLM Wiki 生成交互式知识图谱可视化页面。",
+      "sources": [
+        "docs/plans/2026-05-11-knowledge-graph-viz.md"
+      ]
+    },
+    {
+      "from": "d3js",
+      "to": "",
+      "type": "uses",
+      "description": "D3.js 用于实现和渲染力导向图布局。",
+      "sources": [
+        "docs/plans/2026-05-11-knowledge-graph-viz.md"
+      ]
+    },
+    {
+      "from": "llm",
+      "to": "llm-wiki",
+      "type": "applies-to",
+      "description": "智能体在此仓库上操作以维护该维基项目",
+      "sources": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "llm",
+      "type": "part-of",
+      "description": "是操作规范中定义的三大核心操作之一",
+      "sources": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "from": "llm",
+      "to": "",
+      "type": "uses",
+      "description": "智能体在计划生成阶段调用此子技能",
+      "sources": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "from": "opencode",
+      "to": "obsidian",
+      "type": "uses",
+      "description": "通过符号链接将记忆文件同步至 Obsidian 仓库。",
+      "sources": [
+        "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md",
+        "raw/sources/opencode-memory/README.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "onsavewatcher",
+      "type": "uses",
+      "description": "使用该组件监控文件变更并触发后续处理。",
+      "sources": [
+        "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md"
+      ]
+    },
+    {
+      "from": "siriusec-mcp",
+      "to": "go",
+      "type": "uses",
+      "description": "Siriusec MCP 项目使用 Go 语言进行开发。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "siriusec-mcp",
+      "to": "gin",
+      "type": "uses",
+      "description": "Siriusec MCP 项目使用 Gin 框架构建 Web 服务。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "siriusec-mcp",
+      "to": "mcp",
+      "type": "uses",
+      "description": "Siriusec MCP 项目基于 MCP 协议实现智能运维诊断功能。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "siriusec-mcp",
+      "to": "ssh",
+      "type": "uses",
+      "description": "Siriusec MCP 项目利用 SSH 协议执行远程诊断。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "siriusec-mcp",
+      "to": "rootkit",
+      "type": "applies-to",
+      "description": "Siriusec MCP 项目的安全扫描模块针对 Rootkit 进行检测。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "mcp",
+      "to": "mcp",
+      "type": "applies-to",
+      "description": "该规范定义了 MCP 协议工具在代码层面的注册标准。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "mcp-api",
+      "to": "mcp",
+      "type": "applies-to",
+      "description": "该流程规定了基于 MCP 协议进行 API 调用的会话管理步骤。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "systemd",
+      "type": "uses",
+      "description": "该清理流程依赖 systemd 命令进行服务管理与配置重载。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "rootkit",
+      "to": "rootkit",
+      "type": "applies-to",
+      "description": "该特征集合用于识别和诊断 Rootkit 感染。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "rootkit",
+      "to": "hostguard-ebpf",
+      "type": "related-to",
+      "description": "signal 137 信号特征直接关联 hostguard eBPF 组件。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "rootkit",
+      "to": "ldpreload",
+      "type": "related-to",
+      "description": "ps 命令异常特征由 LD_PRELOAD 劫持技术导致。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "rootkit",
+      "to": "systemd",
+      "type": "related-to",
+      "description": "进程自动重启特征通常由 systemd 守护机制引起。",
+      "sources": [
+        "raw/sources/opencode-memory/siriusec_mcp_memory.md"
+      ]
+    },
+    {
+      "from": "oh-my-opencode",
+      "to": "compaction-context-injector",
+      "type": "uses",
+      "description": "使用该钩子组件保存上下文。",
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    {
+      "from": "oh-my-opencode",
+      "to": "dcpforcompaction",
+      "type": "uses",
+      "description": "启用该功能进行动态上下文剪枝。",
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    {
+      "from": "opencode",
+      "to": "oh-my-opencode",
+      "type": "uses",
+      "description": "集成该免费本地记忆系统以替代付费方案。",
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    {
+      "from": "sync-memory-to-obsidiansh",
+      "to": "obsidian",
+      "type": "applies-to",
+      "description": "将生成的 Markdown 文件复制到 Obsidian 的 raw/sources/ 目录。",
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    {
+      "from": "llm-wiki",
+      "to": "myknowledgebase",
+      "type": "applies-to",
+      "description": "自动提取 Obsidian 中的文件以生成知识图谱。",
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    {
+      "from": "supermemory",
+      "to": "oh-my-opencode",
+      "type": "contrasts-with",
+      "description": "前者为付费方案，后者为免费替代方案。",
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    {
+      "from": "myknowledgebase",
+      "to": "ask-knowledge-base",
+      "type": "uses",
+      "description": "通过该功能查询生成的知识图谱。",
+      "sources": [
+        "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md"
+      ]
+    },
+    {
+      "from": "opencode",
+      "to": "oh-my-opencode",
+      "type": "part-of",
+      "description": "OpenCode 本地记忆系统是 Oh My OpenCode 的组成部分。",
+      "sources": [
+        "raw/sources/opencode-memory/README.md"
+      ]
+    },
+    {
+      "from": "opencode",
+      "to": "llm-wiki",
+      "type": "uses",
+      "description": "同步至 Obsidian 的文件由 LLM Wiki 自动提取并生成知识图谱。",
+      "sources": [
+        "raw/sources/opencode-memory/README.md"
+      ]
+    },
+    {
+      "from": "opencode",
+      "to": "myknowledgebase",
+      "type": "applies-to",
+      "description": "OpenCode 本地记忆系统的配置指定 My_Knowledge_Base 为同步目标知识库路径。",
+      "sources": [
+        "raw/sources/opencode-memory/README.md"
+      ]
+    },
+    {
+      "from": "opencode-sync-memory",
+      "to": "opencode",
+      "type": "uses",
+      "description": "opencode-sync-memory 命令用于手动触发 OpenCode 本地记忆系统的同步操作。",
+      "sources": [
+        "raw/sources/opencode-memory/README.md"
+      ]
+    },
+    {
+      "from": "opencode",
+      "to": "opencode",
+      "type": "applies-to",
+      "description": "OpenCode 记忆分类体系用于规范 OpenCode 本地记忆系统中存储内容的类型。",
+      "sources": [
+        "raw/sources/opencode-memory/README.md"
+      ]
+    },
+    {
+      "from": "opencode",
+      "to": "",
+      "type": "uses",
+      "description": "OpenCode 生成的记忆文件依赖该机制同步至外部知识库。",
+      "sources": [
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    {
+      "from": "",
+      "to": "obsidian",
+      "type": "applies-to",
+      "description": "该机制使 Obsidian 能够直接访问并监控 OpenCode 的记忆文件。",
+      "sources": [
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    {
+      "from": "obsidian",
+      "to": "llm-wiki",
+      "type": "uses",
+      "description": "Obsidian 运行 LLM Wiki 插件以处理同步进来的 Markdown 文件。",
+      "sources": [
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    {
+      "from": "qwen36-plus",
+      "to": "llm-wiki",
+      "type": "applies-to",
+      "description": "作为 LLM Wiki 执行知识提取任务时调用的底层推理模型。",
+      "sources": [
+        "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md"
+      ]
+    },
+    {
+      "from": "git-worktree",
+      "to": "git",
+      "type": "uses",
+      "description": "Git Worktree 初始化流程依赖于 Git 的 worktree 命令与 HEAD 指针机制。",
+      "sources": [
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    },
+    {
+      "from": "git-worktree",
+      "to": "opencode",
+      "type": "applies-to",
+      "description": "该初始化方案应用于 OpenCode 项目的分支管理与工作流中。",
+      "sources": [
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    },
+    {
+      "from": "git-worktree-best-practices",
+      "to": "git-worktree",
+      "type": "related-to",
+      "description": "作为本文档的参考资料，与初始化方案主题相关。",
+      "sources": [
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    },
+    {
+      "from": "opencode-workflow-integration",
+      "to": "git-worktree",
+      "type": "related-to",
+      "description": "作为本文档的参考资料，与工作流集成主题相关。",
+      "sources": [
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    },
+    {
+      "from": "worktree",
+      "to": "git-worktree",
+      "type": "part-of",
+      "description": "目录结构规范是 Git Worktree 初始化决策中的关键组成部分。",
+      "sources": [
+        "20-Decisions/2026-05-26-git-worktree-init.md"
+      ]
+    }
+  ],
+  "sources": {
+    "schema.md": {
+      "id": "schema.md",
+      "summary": "本文档定义了一个知识库的结构模式，详细规定了页面类型分类、文件目录结构、YAML前置元数据格式以及双括号维基链接规范。",
+      "date": "2026-05-18",
+      "mtime": 1777359539304,
+      "origin": "user-note",
+      "contentHash": "5e3c9b23f80dd89dda144001f500e329ce9ae32800a382dd316553521c778467"
+    },
+    "raw/from_karphy/20260514-092910-artificial-intelligence.md": {
+      "id": "raw/from_karphy/20260514-092910-artificial-intelligence.md",
+      "summary": "本文档概述了人工智能（AI）的定义、历史发展、核心研究目标、关键技术（如深度学习与Transformer架构）、主要应用（如生成式AI），以及相关的伦理、安全与监管议题。",
+      "date": "2026-05-18",
+      "mtime": 1779080873177,
+      "origin": "user-note",
+      "contentHash": "5c4271dcd480ebf41583821d999dc97a151e9c9f80a8ec6d1921c13fc37cd458"
+    },
+    "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md": {
+      "id": "raw/from_karphy/20260514-092117-github-copilot---your-ai-pair-programmer.md",
+      "summary": "本文档是GitHub Copilot的官方介绍页面，将其定位为适用于从代码编辑器到企业级工作流的AI加速器，并介绍了其在VS Code中的集成、代理模式、CLI版本以及采用该工具的企业。",
+      "date": "2026-05-18",
+      "mtime": 1779080873175,
+      "origin": "user-note",
+      "contentHash": "e5405e40a4c2fc48d3511884681bc1ebfead42c6f6c26812941a7cecd28a7989"
+    },
+    "raw/from_karphy/20260514-092056-rust--programming-language-.md": {
+      "id": "raw/from_karphy/20260514-092056-rust--programming-language-.md",
+      "summary": "本文档介绍了Rust编程语言的基本信息、核心特性、开发历史及其与其他编程语言之间的相互影响关系。",
+      "date": "2026-05-18",
+      "mtime": 1779080873174,
+      "origin": "user-note",
+      "contentHash": "a0dfb548ca92ffaba885b07223abf40b722c553df6efd1a99030442b1b33db3e"
+    },
+    "raw/from_karphy/20260513-093123-completion-test-plan.md": {
+      "id": "raw/from_karphy/20260513-093123-completion-test-plan.md",
+      "summary": "本文档是一份测试计划的完成报告，记录了计划文件路径、执行状态、完成时间，以及通过 autocli 工具访问 GitHub 资源的情况。",
+      "date": "2026-05-18",
+      "mtime": 1779080873173,
+      "origin": "user-note",
+      "contentHash": "37973c2d632bbb211f5698c02fd0dea5979da0a5229bcf8309d306ed65917903"
+    },
+    "raw/from_karphy/20260513-093102-example-domain.md": {
+      "id": "raw/from_karphy/20260513-093102-example-domain.md",
+      "summary": "本文档介绍了示例域名（example.com）的用途，说明其专用于文档示例且无需许可，并建议避免在实际操作中使用。",
+      "date": "2026-05-18",
+      "mtime": 1779080873172,
+      "origin": "user-note",
+      "contentHash": "3bae2c7370d0a9b830e10267230a96a371486f53c6814425ecc220d28fca26cd"
+    },
+    "raw/from_karphy/20260512-165733-completion-test-integration.md": {
+      "id": "raw/from_karphy/20260512-165733-completion-test-integration.md",
+      "summary": "本文档是一份关于test-integration任务的完成报告，记录了任务状态、完成时间以及执行期间访问的参考资料。",
+      "date": "2026-05-18",
+      "mtime": 1779080873170,
+      "origin": "user-note",
+      "contentHash": "0bc57171a989babbd69902e84dfbb81ff07514484ace8934a185135aa6c45dc1"
+    },
+    "raw/from_karphy/20260512-165700-completion-test-integration.md": {
+      "id": "raw/from_karphy/20260512-165700-completion-test-integration.md",
+      "summary": "本文档是 test-integration 项目的完成报告，记录了项目状态、完成时间、任务进度以及实施过程中访问的参考资料与工具。",
+      "date": "2026-05-18",
+      "mtime": 1779080873169,
+      "origin": "user-note",
+      "contentHash": "7f791d7d342ddeb601af0579db7a9b96703d5a282faab14281dcce7d5c774fdf"
+    },
+    "raw/from_karphy/20260512-165216-untitled.md": {
+      "id": "raw/from_karphy/20260512-165216-untitled.md",
+      "summary": "该文档为空笔记，仅包含捕获元数据，其来源链接指向 Rust 官方编程书籍。",
+      "date": "2026-05-18",
+      "mtime": 1779080873167,
+      "origin": "user-note",
+      "contentHash": "dc560469e02912f74cb11e2e86f5201196c8ec66c1a6b1976a4a4fa4a31a2eb8"
+    },
+    "raw/sources/test-automation.md": {
+      "id": "raw/sources/test-automation.md",
+      "summary": "本文档是一篇用于自动化测试的简短文章，主要目的是测试自动监视器的功能。",
+      "date": "2026-05-18",
+      "mtime": 1778465227361,
+      "origin": "user-note",
+      "contentHash": "3825a1383b4428de18ef19479d4652050f51db725752846138a0512791008bf4"
+    },
+    "raw/sources/sample_article.md": {
+      "id": "raw/sources/sample_article.md",
+      "summary": "本文档介绍了名为 LLM Wiki 的开源项目，该项目基于卡帕西的理念，利用大语言模型将文档自动转化为结构化、相互关联的个人知识库，并详细说明了其核心特性、技术栈及与 Obsidian 的兼容性。",
+      "date": "2026-05-18",
+      "mtime": 1777359952777,
+      "origin": "user-note",
+      "contentHash": "34bae8fbd034d352e6c37ecc0d9c2b848e78e5e38fe31352fc6f7eb743c3f9b5"
+    },
+    "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md": {
+      "id": "raw/sources/Introduction to Obsidian Web Clipper - Obsidian Help.md",
+      "summary": "本文档介绍了 Obsidian Web Clipper 浏览器扩展的功能、安装方法、使用指南及隐私政策，说明其如何将网页内容保存至本地知识库。",
+      "date": "2026-05-18",
+      "mtime": 1778462768336,
+      "origin": "user-note",
+      "contentHash": "bdc7956874a4610b50b208eeaebbfd83fd6ffb806a3cc68efd12a07babdbfa33"
+    },
+    "raw/sources/20250511-011617-github-nashsu-llm-wiki.md": {
+      "id": "raw/sources/20250511-011617-github-nashsu-llm-wiki.md",
+      "summary": "本文档介绍了 LLM Wiki 项目，这是一个基于 Andrej Karpathy 原始设计模式开发的跨平台桌面应用程序，能够利用大语言模型自动将文档转化为结构化、相互链接且持续更新的个人知识库。",
+      "date": "2026-05-18",
+      "mtime": 1778462246035,
+      "origin": "user-note",
+      "contentHash": "9c4e0c084adaf658c0c1356dac223b312afecd1bce59ba40c0661c305ffb0b53"
+    },
+    "purpose.md": {
+      "id": "purpose.md",
+      "summary": "本文档阐述了个人知识库的建设目标、核心问题、研究范围及其有机演进的理念。",
+      "date": "2026-05-18",
+      "mtime": 1777359513604,
+      "origin": "user-note",
+      "contentHash": "3f536d55093a97302c8be339e0792a1ea0b6b168c5d0cdff46ac2f0300f5a576"
+    },
+    "docs/plans/2026-05-11-knowledge-graph-viz.md": {
+      "id": "docs/plans/2026-05-11-knowledge-graph-viz.md",
+      "summary": "本文档是一份实施计划，旨在为知识库构建基于 Python 和 D3.js 的交互式知识图谱可视化页面，支持力导向图渲染、节点交互及自动化数据提取与集成。",
+      "date": "2026-05-18",
+      "mtime": 1778467024435,
+      "origin": "user-note",
+      "contentHash": "2da4f2dfe75656e166a9b3f608ae0c225fdcec89be4316b72387a75bb66479c4"
+    },
+    "AGENTS.md": {
+      "id": "AGENTS.md",
+      "summary": "本文档定义了 LLM 智能体在 LLM Wiki 仓库中的操作规范，涵盖目录结构、写作规则、知识摄入/查询/清理流程、索引与日志格式，以及严格的五阶段实施工作流。",
+      "date": "2026-05-18",
+      "mtime": 1778468682624,
+      "origin": "user-note",
+      "contentHash": "2ef72eab62f8d4ec77ef95395565cb675afb8b02f405e45f3c116f9d693558e9"
+    },
+    "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md": {
+      "id": "raw/sources/opencode-memory/test-auto-sync-2026-05-19.md",
+      "summary": "本文档是一份测试文件，用于验证 OpenCode 记忆系统通过符号链接自动同步至 Obsidian 的流程，并说明 LLM Wiki 的 OnSaveWatcher 监控机制如何自动提取信息以更新知识图谱。",
+      "date": "2026-05-19",
+      "mtime": 1779161817538,
+      "origin": "user-note",
+      "contentHash": "3c8c721e03f35891203ec1e079db09c40bcbf0682ad0961bb56a970a867d6968"
+    },
+    "raw/sources/opencode-memory/siriusec_mcp_memory.md": {
+      "id": "raw/sources/opencode-memory/siriusec_mcp_memory.md",
+      "summary": "本文档记录了 Siriusec MCP 项目的核心架构、MCP 协议工具注册与调用规范、服务端口配置，以及系统安全扫描中的 Rootkit 信号识别与恶意服务清理流程。",
+      "date": "2026-05-19",
+      "mtime": 1776743506193,
+      "origin": "user-note",
+      "contentHash": "65b4d60b99fd66a9e1d3e8cc9e87f701164e7fa45a8dc29aac200876c4c935c8"
+    },
+    "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md": {
+      "id": "raw/sources/opencode-memory/opencode-sessions/2026-05-19-session-template.md",
+      "summary": "本文档记录了 2026 年 5 月 19 日的会话记忆，主要关于放弃付费的 Supermemory，转而启用 Oh My OpenCode 免费本地记忆系统，并通过同步脚本将其与 Obsidian 及 LLM Wiki 整合以构建本地知识库的决策、配置与后续步骤。",
+      "date": "2026-05-19",
+      "mtime": 1779160927050,
+      "origin": "user-note",
+      "contentHash": "c3534efc218a75c9ce0deb1be0a5efa0e635bcc5863089cb15598dfe1367a354"
+    },
+    "raw/sources/opencode-memory/README.md": {
+      "id": "raw/sources/opencode-memory/README.md",
+      "summary": "本文档介绍了 OpenCode 本地记忆系统的架构、工作原理、目录结构、与 Obsidian 和 LLM Wiki 的整合方式、记忆分类、配置方法及隐私特性。",
+      "date": "2026-05-19",
+      "mtime": 1779160873070,
+      "origin": "user-note",
+      "contentHash": "7a6ac3ebe6dc18e41d7470feb2e0d5f267e4a2a1999be441a8d1d7863fc3721e"
+    },
+    "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md": {
+      "id": "raw/sources/opencode-memory/AUTO-SYNC-SETUP-COMPLETE.md",
+      "summary": "本文档记录了通过文件系统符号链接将 OpenCode 记忆目录实时同步至 Obsidian 知识库源目录的实施方案，并详细说明了 LLM Wiki 插件的夜间自动提取配置与知识图谱更新流程。",
+      "date": "2026-05-19",
+      "mtime": 1779161865996,
+      "origin": "user-note",
+      "contentHash": "d96d38148b793b5ee65283fecdbe4b0b02b4bef70bfded11349f566b3a1a5ff7"
+    },
+    "20-Decisions/2026-05-26-git-worktree-init.md": {
+      "id": "20-Decisions/2026-05-26-git-worktree-init.md",
+      "summary": "本文档记录了解决在空 Git 仓库上使用 git worktree 时出现 HEAD 无效错误的方案，包括先初始化 commit、使用 mkdir -p 以及统一 worktree 目录结构的决策。",
+      "date": "2026-05-27",
+      "mtime": 1779782588112,
+      "origin": "user-note",
+      "contentHash": "bab358ab892819592f58fbc97ac6de8ac744392712892a8051c2eaff87427961"
+    }
+  }
+}
